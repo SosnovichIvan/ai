@@ -1,0 +1,41 @@
+version: 0.2.0
+source_of_truth: ai/
+profiles:
+  standard:
+    description: Базовый SDD-набор для Codex-проектов.
+    rules:
+      - rules/core.md
+      - rules/installation.md
+      - rules/security.md
+      - rules/lifecycle.md
+      - rules/frontend.md
+      - rules/backend.md
+      - rules/database.md
+      - rules/contracts.md
+      - rules/devops.md
+      - rules/testing.md
+      - rules/observability.md
+      - rules/git.md
+      - rules/documentation.md
+      - rules/review.md
+    skills:
+      - skills/sdd-workflow/SKILL.md
+      - skills/project-bootstrap/SKILL.md
+      - skills/analyst/SKILL.md
+      - skills/frontend/SKILL.md
+      - skills/backend/SKILL.md
+      - skills/designer/SKILL.md
+      - skills/reviewer/SKILL.md
+      - skills/tester/SKILL.md
+      - skills/quality/SKILL.md
+      - skills/database/SKILL.md
+      - skills/infrastructure/SKILL.md
+      - skills/observability/SKILL.md
+      - skills/messaging/SKILL.md
+      - skills/orchestrator/SKILL.md
+    templates: []
+targets:
+  rules: AGENTS.md
+  skills: .agents/skills
+  manifest: .agent-config/manifest.json
+  backups: .agent-config/backups
