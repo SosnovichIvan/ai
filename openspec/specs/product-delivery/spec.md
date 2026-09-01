@@ -53,13 +53,22 @@ Windows и Linux из lockfile и запускать regression gates до пу�
 Repository SHALL содержать README с возможностями desktop-продукта,
 воспроизводимой npm-инструкцией и локальными скриншотами интерфейса. Изменения
 веток `main` и `develop` SHALL попадать в них только через pull request,
-одобренный code owner.
+одобренный code owner. Repository administrator MAY обойти approval только при
+merge pull request; такой bypass MUST не разрешать прямой push в защищённые
+ветки.
 
 #### Scenario: Вклад в защищённую ветку
 
 - **WHEN** contributor пытается напрямую отправить commit в `main` или
   `develop`
 - **THEN** GitHub отклоняет push и предлагает создать pull request
+
+#### Scenario: Merge собственного PR владельцем
+
+- **WHEN** repository administrator завершает собственный pull request в
+  `main` или `develop`
+- **THEN** GitHub позволяет bypass только в контексте PR, сохраняя запрет на
+  прямой push
 
 #### Scenario: Проверка продукта из README
 

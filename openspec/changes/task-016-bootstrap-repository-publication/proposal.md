@@ -10,15 +10,17 @@
 - Служебные результаты тестов исключаются из Git index.
 - Текущее проверенное состояние repository публикуется в отдельной ветке.
 - Создаётся PR из этой ветки в `develop` без автоматического merge.
+- Ruleset разрешает repository administrator завершать собственный PR через
+  bypass только для pull request, не ослабляя запрет прямого push.
 
 ## Scope
 
-- Git index, `.gitignore`, bootstrap branch и pull request в GitHub.
+- Git index, `.gitignore`, bootstrap branch, pull request и правила GitHub.
 
 ## Non-Goals
 
 - Изменение логики приложения, версии `1.0.0` или создание release.
-- Обход GitHub ruleset, self-approval или автоматическое слияние PR.
+- Автоматическое слияние PR или bypass прямого push в защищённые ветки.
 
 ## Version
 

@@ -91,9 +91,12 @@ GitHub Release. Один и тот же SemVer используется в `pack
 ## Правила изменения веток
 
 `main` и `develop` защищаются одним GitHub ruleset: прямой push, force push и
-удаление ветки запрещены; merge возможен только через pull request с одним
-approval и обязательным approval владельца `@SosnovichIvan`. Файл
+удаление ветки запрещены. Для pull request участника требуется один approval
+и approval владельца `@SosnovichIvan`; файл
 [`.github/CODEOWNERS`](.github/CODEOWNERS) назначает владельца для всех файлов.
+Repository administrator может завершить собственный PR через режим bypass
+`Allow for pull requests only`; этот режим не разрешает прямой push в
+защищённые ветки.
 
 Для первого применения создайте fine-grained GitHub token с правом
 **Administration: Read and write** только для этого repository, экспортируйте

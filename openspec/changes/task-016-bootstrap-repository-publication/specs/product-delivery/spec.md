@@ -5,7 +5,8 @@
 Repository SHALL содержать README с возможностями desktop-продукта,
 воспроизводимой npm-инструкцией и локальными скриншотами интерфейса. Изменения
 веток `main` и `develop` SHALL попадать в них только через pull request,
-одобренный code owner. Первая публикация локального состояния MUST
+одобренный code owner. Repository administrator MAY bypass approval только при
+merge собственного pull request, сохраняя запрет прямого push. Первая публикация локального состояния MUST
 использовать отдельную bootstrap-ветку и PR в `develop`.
 
 #### Scenario: Первая публикация repository
