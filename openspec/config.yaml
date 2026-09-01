@@ -1,0 +1,37 @@
+schema: agent-config-sdd
+
+context: |
+  Язык артефактов: русский. Структурные заголовки OpenSpec, SHALL/MUST,
+  GIVEN/WHEN/THEN, идентификаторы и технические термины не переводить.
+
+  Продукт — локальная единая точка настройки агентов и ИИ для выбранного
+  проекта. Приоритет — desktop UI с нативным выбором каталога. Надёжное ядро
+  установки не зависит от UI: оно валидирует путь, строит preview, создаёт
+  backups, выполняет идемпотентную запись и сохраняет manifest.
+
+  Нормативные источники: AGENTS.md, ai/ и openspec/. UI не реализуется до
+  явного согласования Figma URL с node-id. Секреты никогда не читаются,
+  копируются или логируются.
+
+rules:
+  proposal:
+    - Явно разделять Scope и Non-Goals, указывать затронутые files, безопасность и rollback.
+  specs:
+    - Описывать наблюдаемое поведение, а не детали реализации.
+    - Каждое requirement должно иметь как минимум один Scenario WHEN/THEN.
+  design-approval:
+    - Для UI требовать явное пользовательское APPROVED и прямой Figma URL с node-id.
+    - Для non-UI фиксировать NOT_REQUIRED и конкретное scope-analysis.
+  tasks:
+    - Каждый checkbox содержит секцию `Проверка:`.
+  design:
+    - Описывать альтернативы, безопасность, atomicity, rollback и риски.
+
+operations:
+  apply:
+    guidance:
+      - До кода проверить активный change и design gate.
+      - Не выполнять установку без preview и явной цели.
+  archive:
+    guidance:
+      - Архивировать только после verify, выполнения всех tasks и обновления current specs.
